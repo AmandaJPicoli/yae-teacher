@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1626313667142,
+  "timestamp": 1626314563376,
   "index": "/yae-teacher/index.html",
   "assetGroups": [
     {
@@ -48,8 +48,8 @@
     "/yae-teacher/assets/icons/icon-152x152.png": "85130b2f92583c1ec5825e101eedb9ba1edb9554",
     "/yae-teacher/assets/icons/icon-192x192.png": "d2b2eb5fe226abf2ab96dfe9aabd8c7a0b507813",
     "/yae-teacher/assets/icons/icon-384x384.png": "cbf792fa82762f5ec3063d0cbd874a10af29514a",
-    "/yae-teacher/assets/icons/icon-512x512.png": "539cb92ec6b381be3434771f359390bd3e930a84",
-    "/yae-teacher/assets/icons/icon-72x72.png": "52218913a7e1a6edb297986376c884918b1ae32e",
+    "/yae-teacher/assets/icons/icon-512x512.png": "6168c0e24b79e108d520e43fedefa2011f0faccb",
+    "/yae-teacher/assets/icons/icon-72x72.png": "8af6f56a22f8c2902e8adaa022f124c7247af26b",
     "/yae-teacher/assets/icons/icon-96x96.png": "1ff291db89ea632d3199e93d60054d339744f5f3",
     "/yae-teacher/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/yae-teacher/index.html": "08aadc885e516bdbcc0c4977161664d119d59fc0",
