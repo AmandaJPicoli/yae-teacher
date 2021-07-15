@@ -17,7 +17,7 @@ export class ExercisesComponent implements OnInit {
     },
     {
       id: 2,
-      text: "The book is on the table"
+      text: "Black background, brown background"
     }];
   resultado: string | undefined;
 
