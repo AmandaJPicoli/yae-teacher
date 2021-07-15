@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="text-box row">
+        <h3>{{textos[1].text}}</h3>
+        <button class="btn" id="read" (click)="buttonReadText()">
+            <i class="fa fa-play fa-2x"></i>
+
+        </button>
+    </div>
+
+    <div class="text-box">
+        <h3>Experimente falar</h3>
+        <h4>{{service.text}}</h4>
+        <div class="botoes mt-4 text-center" >
+            <button type="button" id="btn-play" class="btn-play text-center " (click)="startService()">
+                <i class="fa fa-microphone fa-2x"></i>
+            </button>
+
+            <button type="button" id="btn-stop" class="btn-stop text-center " (click)="stopService()">
+                <i class="far fa-stop-circle"></i>
+            </button>
+        </div>
+    </div>
+</div>

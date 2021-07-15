@@ -1,0 +1,98 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  max-width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1,
+h3,
+h4 {
+  text-align: center;
+  color: #43267b;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #43267b;
+  ;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+select:focus {
+  outline: 0;
+}
+
+#btn-play,
+#btn-stop {
+  background-color: transparent;
+  border: 0px;
+}
+
+.fa-microphone:before {
+  content: "\f130";
+  font-size: 50px;
+  color: #3a3768;
+  background-color: transparent;
+}
+
+.fa-play-circle:before {
+  content: "\f144";
+  font-size: 60px;
+  color: #3a3768;
+}
+
+.fa-stop-circle:before {
+  content: "\f28d";
+  font-size: 60px;
+  color: #f34545;
+}
+
+@media (max-width: 1100px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
