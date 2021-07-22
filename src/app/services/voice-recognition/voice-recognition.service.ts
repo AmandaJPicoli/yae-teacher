@@ -51,7 +51,7 @@ export class VoiceRecognitionService {
   }
 
   wordConcat() {
-    this.text = this.text + ' ' + this.tempWords + '.';
+    this.text = this.tempWords + ' ';
     this.tempWords = '';
   }
 }

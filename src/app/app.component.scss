@@ -32,8 +32,10 @@ h1{
   width: 100%;
   height: 100vh;
   background-color: #ede7f6;
-  overflow: hidden;
+  overflow: scroll;
 }
+
+
 
 /* Toggle Functionality */
 
@@ -209,25 +211,6 @@ h1{
     height: 2px;
     background-color: #4527a0;
     transform: translateY(-50%) scaleY(5);
-    transition: $transition-duration;
-  }
-}
-
-/* Dummy Content */
-
-.dummy-content {
-  position: relative;
-  text-align: center;
-  transition: $transition-duration;
-
-  &:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
     transition: $transition-duration;
   }
 }
