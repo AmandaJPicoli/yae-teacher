@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="text-box row">
-        <h3>{{textos[1].text}}</h3>
-        <button class="btn" id="read" (click)="buttonReadText()">
-            <i class="fa fa-play fa-2x"></i>
+    <div class="text-box row"  >
+        <h3>{{expressao.expressao}}</h3>
 
+        <button class="btn" id="read" (click)="buttonReadText(expressao.expressao)">
+            <i class="fa fa-play fa-2x"></i>
         </button>
     </div>
 
@@ -16,8 +16,17 @@
             </button>
 
             <button type="button" id="btn-stop" class="btn-stop text-center " (click)="stopService()">
-                <i class="far fa-stop-circle"></i>
+                <i class="fa fa-stop-circle"></i>
             </button>
         </div>
+    </div>
+    <div class="next-previous" >
+        <button type="button" id="btn-previous" class="btn-previous text-center" (click)="buscarExpressao(page - 1)">
+            <i class="fa fa-backward fa-2x"></i>
+        </button>
+
+        <button type="button" id="btn-next" class="btn-next text-center" (click)="buscarExpressao(page + 1)" >
+            <i class="fa fa-forward fa-2x"></i>
+        </button>
     </div>
 </div>
