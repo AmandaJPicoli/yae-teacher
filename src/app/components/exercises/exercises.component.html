@@ -1,32 +1,26 @@
-<div class="container">
-    <div class="text-box row"  >
-        <h3>{{expressao.expressao}}</h3>
-
-        <button class="btn" id="read" (click)="buttonReadText(expressao.expressao)">
-            <i class="fa fa-play fa-2x"></i>
-        </button>
-    </div>
-
-    <div class="text-box">
-        <h3>Experimente falar</h3>
-        <h4>{{service.text}}</h4>
-        <div class="botoes mt-4 text-center" >
-            <button type="button" id="btn-play" class="btn-play text-center " (click)="startService()">
-                <i class="fa fa-microphone fa-2x"></i>
+<body>
+    <div class="container">
+        <div  class="card" *ngFor="let expressao of conjunto | paginate: { itemsPerPage: contador, currentPage: paginaAtual }">
+            <h3>Aperte o play e ouça a expressão</h3>
+            <h4>{{expressao.expressao}}</h4>
+            <button class="btn" id="read" (click)="buttonReadText(expressao.expressao)">
+                <i class="fa fa-play fa-2x"></i>
             </button>
-
-            <button type="button" id="btn-stop" class="btn-stop text-center " (click)="stopService()">
-                <i class="fa fa-stop-circle"></i>
-            </button>
+            <h3>Experimente falar</h3>
+            <h4>{{service.text}}</h4>
+            <div class="botoes mt-4 text-center" >
+                <button type="button" id="btn-play" class="btn-play text-center " (click)="startService()">
+                    <i class="fa fa-microphone fa-2x"></i>
+                </button>
+    
+                <button type="button" id="btn-stop" class="btn-stop text-center " (click)="stopService()">
+                    <i class="fa fa-stop-circle"></i>
+                </button>
+            </div>
+            <p>{{expressao.dica}}</p>
+             <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
         </div>
     </div>
-    <div class="next-previous" >
-        <button type="button" id="btn-previous" class="btn-previous text-center" (click)="buscarExpressao(page - 1)">
-            <i class="fa fa-backward fa-2x"></i>
-        </button>
-
-        <button type="button" id="btn-next" class="btn-next text-center" (click)="buscarExpressao(page + 1)" >
-            <i class="fa fa-forward fa-2x"></i>
-        </button>
-    </div>
-</div>
+    
+    
+</body>

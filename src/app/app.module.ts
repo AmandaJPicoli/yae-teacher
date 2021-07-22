@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { GrupoComponent } from './components/grupo/grupo.component';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    NgxPaginationModule,
     ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

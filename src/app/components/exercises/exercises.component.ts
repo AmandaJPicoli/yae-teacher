@@ -23,6 +23,9 @@ export class ExercisesComponent implements OnInit {
   expressao!: ExpressaoModel;
   page: number = 1 ;
 
+  //Tentativa Paginação
+  paginaAtual : number = 1 ;
+  contador : number = 1;
 
   constructor(
     public service: VoiceRecognitionService,
@@ -53,9 +56,6 @@ export class ExercisesComponent implements OnInit {
   onSuccess(response: any) {
     this.conjunto = response;
     this.qtdExpressoes = this.conjunto.length;
-    this.conjunto.forEach(element => {
-      this.buscarExpressao(this.page);
-    });
   }
 
   buscarExpressao(pageAtual: number) {

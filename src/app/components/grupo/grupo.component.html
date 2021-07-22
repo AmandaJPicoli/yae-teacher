@@ -1,6 +1,26 @@
-<div class="container" *ngIf="grupos$ | async as grupos">
-    <div *ngFor="let grupo of grupos">
-        <a  class="data-card" (click)="abrirModulo(grupo.id)">
+
+<ul class="cards" *ngIf="grupos$ | async as grupos">
+    <li class="cards__item" *ngFor="let grupo of grupos">
+      <div class="card">
+        <div class="card__content">
+          <div class="card__title">{{grupo.id}}</div>
+          <h3 class="card__text">{{grupo.nome}} </h3>
+          <p>Referente ao módulo dos vídeos do curso</p>
+          <button class="btn card__btn" (click)="abrirModulo(grupo.id)">
+              Ir para prática
+            <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z"
+                    fill="#753BBD" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+
+        <!-- <a  class="data-card" (click)="abrirModulo(grupo.id)">
             <h3>{{grupo.id}}</h3>
             <h4>{{grupo.nome}}</h4>
             <p>Referente ao módulo dos vídeos do curso</p>
@@ -12,6 +32,4 @@
                         fill="#753BBD" />
                 </svg>
             </span>
-        </a>
-    </div>
-</div>
+        </a> -->
