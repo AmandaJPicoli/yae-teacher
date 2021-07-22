@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1626315812590,
+  "timestamp": 1626966866345,
   "index": "/yae-teacher/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/yae-teacher/favicon.ico",
         "/yae-teacher/index.html",
-        "/yae-teacher/main.f1238e5c6168b4abc751.js",
+        "/yae-teacher/main.0f429610a42851d2920d.js",
         "/yae-teacher/manifest.webmanifest",
         "/yae-teacher/polyfills.9189bc41f0e1abb5139a.js",
         "/yae-teacher/runtime.c971c64fc65ee1141ff3.js",
@@ -52,9 +52,9 @@
     "/yae-teacher/assets/icons/icon-72x72.png": "1e5fa509dc169981ae6bf3391a7bac8ae650e784",
     "/yae-teacher/assets/icons/icon-96x96.png": "b360416e4b5326c4fc7e55ea9b702d103a027de8",
     "/yae-teacher/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/yae-teacher/index.html": "08aadc885e516bdbcc0c4977161664d119d59fc0",
-    "/yae-teacher/main.f1238e5c6168b4abc751.js": "a013f2a5cb15a0c3290f5f5dbf7e6eb02900f423",
-    "/yae-teacher/manifest.webmanifest": "ea6afe3709ce26323b51383939fc52453329cc4f",
+    "/yae-teacher/index.html": "e6d4226c3309c0a017a3c13eddf920154db09cb7",
+    "/yae-teacher/main.0f429610a42851d2920d.js": "f060a25d3ec7ebe7abff19ffd3fd09186a650578",
+    "/yae-teacher/manifest.webmanifest": "730e8240275e5e7bfa15d9e5348cebb59fef1a8e",
     "/yae-teacher/polyfills.9189bc41f0e1abb5139a.js": "887d18ca21342488114bdf4dec53ae4175abd268",
     "/yae-teacher/runtime.c971c64fc65ee1141ff3.js": "7962076e0c280ffa91bc3857b2e59fa1abf0c88f",
     "/yae-teacher/styles.94923c2e277596779808.css": "2c92de876865eab52f9b5bc1a96ebc1aca8802e8"
