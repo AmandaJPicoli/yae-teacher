@@ -22,6 +22,7 @@ export class ExercisesComponent implements OnInit {
   texto!: ExpressaoModel[];
   expressao!: ExpressaoModel;
   page: number = 1 ;
+  gravando = false;
 
   //Tentativa Paginação
   paginaAtual : number = 1 ;
@@ -58,44 +59,29 @@ export class ExercisesComponent implements OnInit {
     this.qtdExpressoes = this.conjunto.length;
   }
 
-  buscarExpressao(pageAtual: number) {
-    this.conjuntoService.getConjuntoPorGrupoPaginado(this.grupoId, pageAtual)
-      .subscribe(
-        response => this.onSuccessExpressao(response),
-        error => this.onError(error)
-      )
-  }
-
-  onSuccessExpressao(response: ExpressaoModel[]) {
-    this.texto = response;
-    this.page = this.page +1;
-
-    this.expressao = this.texto[0];
-    console.log(this.expressao);
-    console.log(this.page);
-  }
-
   onError(error: any) {
     this.toastr.error('Erro!', `Alguma coisa deu errado. ${error}`);
   }
 
-  //Logica da pagina
-  carregaPagina() {
-    let maxPage = this.qtdExpressoes ;
-    if (maxPage > 0) {
-      this.conjunto.forEach(element => {
-        console.log(element);
-      });
-    }
-  }
-
   // Recognition 
-  startService() {
-    this.service.start()
+ startService() {
+    this.toastr.info('Play!', "Repita a expressão! Quando terminar de falar aperte o stop");
+    this.service.start();
+    this.verificaGravacao();
   }
 
   stopService() {
-    this.service.stop()
+    this.toastr.success('Stop!', "Confira se você foi bem!");
+    this.service.stop();
+    this.verificaGravacao();
+  }
+
+  verificaGravacao() {
+    if (this.gravando == false) {
+      this.gravando = true;
+    } else {
+      this.gravando = false;
+    }
   }
 
   // Speech
