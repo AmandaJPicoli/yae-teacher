@@ -8,15 +8,19 @@
             </button>
             <h3>Experimente falar</h3>
             <h4>{{service.text}}</h4>
-            <div class="botoes mt-4 text-center" >
+            <div class="botoes mt-4 text-center" *ngIf="gravando == false;  else elseBlock">
                 <button type="button" id="btn-play" class="btn-play text-center " (click)="startService()">
                     <i class="fa fa-microphone fa-2x"></i>
                 </button>
-    
-                <button type="button" id="btn-stop" class="btn-stop text-center " (click)="stopService()">
-                    <i class="fa fa-stop-circle"></i>
-                </button>
             </div>
+            
+                <ng-template #elseBlock>
+                    <button type="button" id="btn-stop" class="btn-stop text-center " (click)="stopService()">
+                        <i class="fa fa-stop-circle"></i>
+                    </button>
+                </ng-template>
+
+            <h3>Dica:</h3>
             <p>{{expressao.dica}}</p>
              <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
         </div>
