@@ -23,6 +23,8 @@ export class ExercisesComponent implements OnInit {
   expressao!: ExpressaoModel;
   page: number = 1 ;
   gravando = false;
+  loading = false;
+  playingAudio = false;
 
   //Tentativa Paginação
   paginaAtual : number = 1 ;
@@ -43,10 +45,14 @@ export class ExercisesComponent implements OnInit {
       this.grupoId = parseInt(this.grupoId_rota);
       this.buscarTotalExpressoes(this.grupoId);
     }
+    this.utterance.addEventListener("end", () => {
+      this.playingAudio = false;
+    }) 
   }
 
   //Buscar dados API
   buscarTotalExpressoes(grupoId: number) {
+    this.loading = true;
     this.conjuntoService.getConjuntoPorGrupo(grupoId)
       .subscribe(
         response => this.onSuccess(response),
@@ -57,9 +63,11 @@ export class ExercisesComponent implements OnInit {
   onSuccess(response: any) {
     this.conjunto = response;
     this.qtdExpressoes = this.conjunto.length;
+    this.loading = false;
   }
 
   onError(error: any) {
+    this.loading = false;
     this.toastr.error('Erro!', `Alguma coisa deu errado. ${error}`);
   }
 
@@ -77,11 +85,7 @@ export class ExercisesComponent implements OnInit {
   }
 
   verificaGravacao() {
-    if (this.gravando == false) {
-      this.gravando = true;
-    } else {
-      this.gravando = false;
-    }
+    this.gravando = !this.gravando
   }
 
   // Speech
@@ -100,8 +104,14 @@ export class ExercisesComponent implements OnInit {
   }
 
   buttonReadText(texto: any) {
+    this.playingAudio = true;
     this.setTextMessage(texto);
     this.speakText();
+  }
+
+  stopAudio(){
+    this.playingAudio = false;
+    speechSynthesis.cancel();
   }
 }
 
