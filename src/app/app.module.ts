@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     HttpClientJsonpModule,
     NgxPaginationModule,
+    MatProgressSpinnerModule,
     ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

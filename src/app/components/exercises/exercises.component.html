@@ -1,30 +1,40 @@
 <body>
-    <div class="container">
-        <div  class="card" *ngFor="let expressao of conjunto | paginate: { itemsPerPage: contador, currentPage: paginaAtual }">
+    <div class="container" *ngIf="!loading;  else elseLoadingBlock">
+        <div class="card"
+            *ngFor="let expressao of conjunto | paginate: { itemsPerPage: contador, currentPage: paginaAtual }">
             <h3>Aperte o play e ouça a expressão</h3>
             <h4>{{expressao.expressao}}</h4>
-            <button class="btn" id="read" (click)="buttonReadText(expressao.expressao)">
+            <button class="btn" id="read" (click)="buttonReadText(expressao.expressao)" *ngIf="!playingAudio; else elsePlayingBlock">
                 <i class="fa fa-play fa-2x"></i>
             </button>
+            <ng-template #elsePlayingBlock>
+                <button class="btn" id="read" (click)="stopAudio()">
+                    <i class="fa fa-pause fa-2x"></i>
+                </button>
+            </ng-template>
             <h3>Experimente falar</h3>
-            <h4>{{service.text}}</h4>
-            <div class="botoes mt-4 text-center" *ngIf="gravando == false;  else elseBlock">
-                <button type="button" id="btn-play" class="btn-play text-center " (click)="startService()">
+            <h4>{{service.reactiveText | async }}</h4>
+            <div class="botoes mt-4 text-center" >
+                <button *ngIf="!gravando;  else elseBlock" type="button" id="btn-play" class="btn-play text-center " (click)="startService()">
                     <i class="fa fa-microphone fa-2x"></i>
                 </button>
-            </div>
-            
                 <ng-template #elseBlock>
                     <button type="button" id="btn-stop" class="btn-stop text-center " (click)="stopService()">
                         <i class="fa fa-stop-circle"></i>
                     </button>
                 </ng-template>
+            </div>
+
+
 
             <h3>Dica:</h3>
             <p>{{expressao.dica}}</p>
-             <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+            <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
+            </pagination-controls>
         </div>
     </div>
-    
-    
+    <ng-template #elseLoadingBlock>
+        <mat-spinner></mat-spinner>
+    </ng-template>
+
 </body>

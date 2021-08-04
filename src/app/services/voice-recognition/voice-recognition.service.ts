@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 declare var webkitSpeechRecognition: any;
 
@@ -10,12 +11,12 @@ export class VoiceRecognitionService {
   recognition =  new webkitSpeechRecognition();
   isStoppedSpeechRecog = false;
   public text = '';
+  reactiveText = new Subject<String>()
   tempWords: any;
 
   constructor() { }
 
   init() {
-
     this.recognition.interimResults = true;
     this.recognition.lang = 'en-US';
 
@@ -26,6 +27,7 @@ export class VoiceRecognitionService {
         .join('');
       this.tempWords = transcript;
       console.log(transcript);
+      this.reactiveText.next(this.tempWords)
     });
   }
 
